@@ -1,0 +1,341 @@
+SET
+CREATE TABLE
+INSERT 0 1000000
+VACUUM
+            substr             | octet_length | pg_column_size | pg_column_size 
+-------------------------------+--------------+----------------+----------------
+ {"NP4Q6JqrSqgMSCJETdVhnF7JXQx |         2004 |           2008 |           2032
+(1 row)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10921.598..10921.600 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.005..239.510 rows=1000000 loops=1)
+ Planning Time: 0.736 ms
+ Execution Time: 10921.672 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10957.093..10957.094 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.009..237.653 rows=1000000 loops=1)
+ Planning Time: 0.044 ms
+ Execution Time: 10957.132 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10868.544..10868.545 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.009..233.721 rows=1000000 loops=1)
+ Planning Time: 0.042 ms
+ Execution Time: 10868.583 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10863.020..10863.021 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.009..236.836 rows=1000000 loops=1)
+ Planning Time: 0.066 ms
+ Execution Time: 10863.058 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10898.956..10898.958 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.009..232.915 rows=1000000 loops=1)
+ Planning Time: 0.042 ms
+ Execution Time: 10898.997 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10815.701..10815.703 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.009..232.080 rows=1000000 loops=1)
+ Planning Time: 0.058 ms
+ Execution Time: 10815.744 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10917.782..10917.784 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.008..246.317 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 10917.819 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10846.782..10846.783 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.008..235.058 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 10846.826 ms
+(4 rows)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265000.00..265000.01 rows=1 width=8) (actual time=10797.391..10797.393 rows=1 loops=1)
+   ->  Seq Scan on json_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.007..235.486 rows=1000000 loops=1)
+ Planning Time: 0.041 ms
+ Execution Time: 10797.431 ms
+(4 rows)
+
+CREATE TABLE
+INSERT 0 1000000
+            substr             | octet_length | pg_column_size | pg_column_size 
+-------------------------------+--------------+----------------+----------------
+ {"k0k0k0k0k0k0k0k0k0k0k0k0k0k |         2005 |            144 |            168
+(1 row)
+
+VACUUM
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11785.615..11785.617 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.006..114.503 rows=1000000 loops=1)
+ Planning Time: 0.060 ms
+ Execution Time: 11785.651 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11832.829..11832.830 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.008..115.490 rows=1000000 loops=1)
+ Planning Time: 0.041 ms
+ Execution Time: 11832.864 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11878.214..11878.216 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.008..117.482 rows=1000000 loops=1)
+ Planning Time: 0.048 ms
+ Execution Time: 11878.256 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11794.129..11794.131 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.008..113.598 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 11794.165 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=12220.595..12220.597 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.007..127.980 rows=1000000 loops=1)
+ Planning Time: 0.041 ms
+ Execution Time: 12220.634 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11795.547..11795.549 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.008..115.108 rows=1000000 loops=1)
+ Planning Time: 0.058 ms
+ Execution Time: 11795.587 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11768.181..11768.182 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.008..116.506 rows=1000000 loops=1)
+ Planning Time: 0.042 ms
+ Execution Time: 11768.219 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11896.919..11896.921 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.009..118.848 rows=1000000 loops=1)
+ Planning Time: 0.042 ms
+ Execution Time: 11896.958 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=36277.00..36277.01 rows=1 width=8) (actual time=11824.290..11824.291 rows=1 loops=1)
+   ->  Seq Scan on json_inline_compressed  (cost=0.00..31277.00 rows=1000000 width=144) (actual time=0.008..117.507 rows=1000000 loops=1)
+ Planning Time: 0.044 ms
+ Execution Time: 11824.326 ms
+(4 rows)
+
+CREATE TABLE
+INSERT 0 1000000
+            substr             | octet_length | pg_column_size | pg_column_size 
+-------------------------------+--------------+----------------+----------------
+ {"NP4Q6JqrSqgMSCJETdVhnF7JXQx |         2005 |           2005 |           2033
+(1 row)
+
+VACUUM
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14290.759..14290.761 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.006..105.493 rows=1000000 loops=1)
+ Planning Time: 0.115 ms
+ Execution Time: 14290.797 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14156.269..14156.271 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..105.039 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 14156.305 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14166.684..14166.685 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.010..105.677 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 14166.721 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14279.095..14279.097 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..104.431 rows=1000000 loops=1)
+ Planning Time: 0.042 ms
+ Execution Time: 14279.132 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14255.131..14255.133 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.010..106.113 rows=1000000 loops=1)
+ Planning Time: 0.050 ms
+ Execution Time: 14255.171 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14220.794..14220.796 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..105.817 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 14220.832 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14172.484..14172.486 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..105.266 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 14172.521 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14011.170..14011.172 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.010..103.317 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 14011.208 ms
+(4 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=14023.545..14023.547 rows=1 loops=1)
+   ->  Seq Scan on json_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..105.612 rows=1000000 loops=1)
+ Planning Time: 0.041 ms
+ Execution Time: 14023.583 ms
+(4 rows)
+
+CREATE TABLE
+INSERT 0 1000000
+            substr             | octet_length | pg_column_size | pg_column_size 
+-------------------------------+--------------+----------------+----------------
+ {"k0k0k0k0k0k0k0k0k0k0k0k0k0k |         2893 |           2005 |           2033
+(1 row)
+
+VACUUM
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=22342.014..22342.015 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.007..114.274 rows=1000000 loops=1)
+ Planning Time: 0.090 ms
+ Execution Time: 22342.051 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=22439.722..22439.724 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..115.648 rows=1000000 loops=1)
+ Planning Time: 0.045 ms
+ Execution Time: 22439.761 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=22337.404..22337.406 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..114.106 rows=1000000 loops=1)
+ Planning Time: 0.041 ms
+ Execution Time: 22337.438 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=22220.455..22220.457 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.011..114.392 rows=1000000 loops=1)
+ Planning Time: 0.045 ms
+ Execution Time: 22220.489 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=22197.699..22197.701 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..115.091 rows=1000000 loops=1)
+ Planning Time: 0.042 ms
+ Execution Time: 22197.734 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=22206.271..22206.273 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..114.019 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 22206.308 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=22318.688..22318.690 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.012..116.506 rows=1000000 loops=1)
+ Planning Time: 0.063 ms
+ Execution Time: 22318.733 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=26387.610..26387.612 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.010..193.289 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 26387.662 ms
+(4 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21370.00..21370.01 rows=1 width=8) (actual time=26141.246..26141.248 rows=1 loops=1)
+   ->  Seq Scan on json_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.010..186.002 rows=1000000 loops=1)
+ Planning Time: 0.049 ms
+ Execution Time: 26141.312 ms
+(4 rows)
+
+   oid    |          relname           | reltoastrelid | relpages | reltuples | toast_pages | toast_tuples | total_relation_size | total_relation_size_pretty 
+----------+----------------------------+---------------+----------+-----------+-------------+--------------+---------------------+----------------------------
+ 12016745 | hstore_inline_compressed   |      12016748 |    28572 |     1e+06 |           0 |            0 |           234160128 | 223 MB
+ 12016739 | hstore_inline_uncompressed |      12016742 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 13016757 | hstore_toast_compressed    |      13016760 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 12016751 | hstore_toast_uncompressed  |      12016754 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 17016824 | json_inline_compressed     |      17016827 |    21277 |     1e+06 |           0 |            0 |           174383104 | 166 MB
+ 17016818 | json_inline_uncompressed   |      17016821 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 18016836 | json_toast_compressed      |      18016839 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 17016830 | json_toast_uncompressed    |      17016833 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 16016800 | jsonb_inline_compressed    |      16016803 |    18182 |     1e+06 |           0 |            0 |           149020672 | 142 MB
+ 16016793 | jsonb_inline_uncompressed  |      16016796 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 17016812 | jsonb_toast_compressed     |      17016815 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 16016806 | jsonb_toast_uncompressed   |      16016809 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 14016775 | text_inline_compressed     |      14016778 |     9346 |     1e+06 |           0 |            0 |            76619776 | 73 MB
+ 14016769 | text_inline_uncompressed   |      14016772 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 15016787 | text_toast_compressed      |      15016790 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 14016781 | text_toast_uncompressed    |      14016784 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+(16 rows)
+

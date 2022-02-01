@@ -1,0 +1,977 @@
+SET
+CREATE TABLE
+INSERT 0 1000000
+VACUUM
+                            substr                            | octet_length | pg_column_size | pg_column_size 
+--------------------------------------------------------------+--------------+----------------+----------------
+ \x6f61565a33704a50444c6c724a306f4371454471555579475a6b484532 |         2004 |           2008 |           2032
+(1 row)
+
+         ?column?          
+---------------------------
+ bytea_inline_uncompressed
+(1 row)
+
+                                                                QUERY PLAN                                                                 
+-------------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.010..15617.205 rows=1000000 loops=1)
+ Planning Time: 0.031 ms
+ Execution Time: 15658.777 ms
+(3 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.010..198.041 rows=1000000 loops=1)
+ Planning Time: 0.032 ms
+ Execution Time: 237.910 ms
+(3 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=2008) (actual time=0.009..201.348 rows=1000000 loops=1)
+ Planning Time: 0.033 ms
+ Execution Time: 241.191 ms
+(3 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.00..262500.01 rows=1 width=8) (actual time=263.851..263.853 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=0) (actual time=0.005..203.189 rows=1000000 loops=1)
+ Planning Time: 0.043 ms
+ Execution Time: 263.909 ms
+(4 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.00..262500.01 rows=1 width=8) (actual time=266.569..266.571 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=0) (actual time=0.009..205.189 rows=1000000 loops=1)
+ Planning Time: 0.037 ms
+ Execution Time: 266.604 ms
+(4 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.00..262500.01 rows=1 width=8) (actual time=260.737..260.739 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=0) (actual time=0.009..200.624 rows=1000000 loops=1)
+ Planning Time: 0.037 ms
+ Execution Time: 260.772 ms
+(4 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.00..262500.01 rows=1 width=8) (actual time=352.118..352.119 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=0) (actual time=0.007..291.868 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.050 ms
+ Execution Time: 352.153 ms
+(5 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.00..262500.01 rows=1 width=8) (actual time=355.641..355.643 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=0) (actual time=0.010..294.733 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.042 ms
+ Execution Time: 355.676 ms
+(5 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.00..262500.01 rows=1 width=8) (actual time=352.337..352.339 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..260000.00 rows=1000000 width=0) (actual time=0.010..292.838 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.043 ms
+ Execution Time: 352.372 ms
+(5 rows)
+
+                                                                QUERY PLAN                                                                 
+-------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=351.144..351.146 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=0.007..291.704 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.052 ms
+ Execution Time: 351.185 ms
+(5 rows)
+
+                                                                QUERY PLAN                                                                 
+-------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=361.770..361.771 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=0.014..301.217 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.060 ms
+ Execution Time: 361.817 ms
+(5 rows)
+
+                                                                QUERY PLAN                                                                 
+-------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=355.987..355.989 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=0.011..296.138 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.043 ms
+ Execution Time: 356.024 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=261.761..261.763 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=261.756..261.756 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 261.798 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=252.910..252.912 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=252.904..252.905 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.046 ms
+ Execution Time: 252.947 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=251.367..251.369 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=251.361..251.362 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.043 ms
+ Execution Time: 251.403 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.25..262500.26 rows=1 width=8) (actual time=2317.389..2317.391 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..262500.00 rows=100 width=0) (actual time=2317.384..2317.385 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.046 ms
+ Execution Time: 2317.422 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.25..262500.26 rows=1 width=8) (actual time=2337.699..2337.701 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..262500.00 rows=100 width=0) (actual time=2337.694..2337.695 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.052 ms
+ Execution Time: 2337.734 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.25..262500.26 rows=1 width=8) (actual time=2336.577..2336.579 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..262500.00 rows=100 width=0) (actual time=2336.571..2336.572 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.045 ms
+ Execution Time: 2336.610 ms
+(6 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.25..262500.26 rows=1 width=8) (actual time=2180.271..2180.273 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..262500.00 rows=100 width=0) (actual time=0.014..2120.283 rows=1000000 loops=1)
+         Filter: (v ~~ '\x25595264436a70643125'::bytea)
+ Planning Time: 0.047 ms
+ Execution Time: 2180.306 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.25..262500.26 rows=1 width=8) (actual time=2176.139..2176.141 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..262500.00 rows=100 width=0) (actual time=0.014..2116.139 rows=1000000 loops=1)
+         Filter: (v ~~ '\x25595264436a70643125'::bytea)
+ Planning Time: 0.045 ms
+ Execution Time: 2176.190 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=262500.25..262500.26 rows=1 width=8) (actual time=2215.716..2215.718 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..262500.00 rows=100 width=0) (actual time=0.013..2154.009 rows=1000000 loops=1)
+         Filter: (v ~~ '\x25595264436a70643125'::bytea)
+ Planning Time: 0.048 ms
+ Execution Time: 2215.752 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=2168.172..2168.174 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=2168.167..2168.168 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.042 ms
+ Execution Time: 2168.203 ms
+(6 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=2092.662..2092.664 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=2092.658..2092.659 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 2092.696 ms
+(6 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=2108.930..2108.932 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=2108.926..2108.927 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.046 ms
+ Execution Time: 2108.965 ms
+(6 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=2085.826..2085.828 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=0.013..2025.560 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x595264436a706431'::bytea) > 0)
+ Planning Time: 0.043 ms
+ Execution Time: 2085.862 ms
+(5 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=2087.663..2087.664 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=0.014..2027.641 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x595264436a706431'::bytea) > 0)
+ Planning Time: 0.063 ms
+ Execution Time: 2087.706 ms
+(5 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=265833.33..265833.34 rows=1 width=8) (actual time=2067.763..2067.765 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_uncompressed  (cost=0.00..265000.00 rows=333333 width=0) (actual time=0.014..2007.985 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x595264436a706431'::bytea) > 0)
+ Planning Time: 0.044 ms
+ Execution Time: 2067.799 ms
+(5 rows)
+
+CREATE TABLE
+INSERT 0 1000000
+VACUUM
+                            substr                            | octet_length | pg_column_size | pg_column_size 
+--------------------------------------------------------------+--------------+----------------+----------------
+ \x6161616161616161616161616161616161616161616161616161616161 |         2005 |             44 |             68
+(1 row)
+
+        ?column?         
+-------------------------
+ bytea_inline_compressed
+(1 row)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_inline_compressed  (cost=0.00..19346.00 rows=1000000 width=44) (actual time=0.008..76.424 rows=1000000 loops=1)
+ Planning Time: 0.032 ms
+ Execution Time: 115.886 ms
+(3 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_inline_compressed  (cost=0.00..19346.00 rows=1000000 width=44) (actual time=0.009..76.468 rows=1000000 loops=1)
+ Planning Time: 0.042 ms
+ Execution Time: 116.135 ms
+(3 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_inline_compressed  (cost=0.00..19346.00 rows=1000000 width=44) (actual time=0.008..76.727 rows=1000000 loops=1)
+ Planning Time: 0.032 ms
+ Execution Time: 116.390 ms
+(3 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.00..21846.01 rows=1 width=8) (actual time=176.983..176.985 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..19346.00 rows=1000000 width=0) (actual time=0.011..118.956 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.041 ms
+ Execution Time: 177.018 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.00..21846.01 rows=1 width=8) (actual time=173.826..173.827 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..19346.00 rows=1000000 width=0) (actual time=0.011..115.028 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.063 ms
+ Execution Time: 173.861 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.00..21846.01 rows=1 width=8) (actual time=178.939..178.940 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..19346.00 rows=1000000 width=0) (actual time=0.010..120.948 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.042 ms
+ Execution Time: 178.972 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=176.674..176.676 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=0.010..118.717 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.048 ms
+ Execution Time: 176.709 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=178.042..178.044 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=0.010..119.487 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.044 ms
+ Execution Time: 178.077 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=179.849..179.851 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=0.011..121.821 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.044 ms
+ Execution Time: 179.884 ms
+(5 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=87.022..87.024 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=87.017..87.017 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.053 ms
+ Execution Time: 87.055 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=86.858..86.859 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=86.854..86.854 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 86.893 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=87.693..87.694 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=87.687..87.688 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.041 ms
+ Execution Time: 87.726 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.25..21846.26 rows=1 width=8) (actual time=1714.824..1714.826 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..21846.00 rows=100 width=0) (actual time=1714.819..1714.819 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.047 ms
+ Execution Time: 1714.856 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.25..21846.26 rows=1 width=8) (actual time=1806.008..1806.009 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..21846.00 rows=100 width=0) (actual time=1806.004..1806.004 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.047 ms
+ Execution Time: 1806.038 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.25..21846.26 rows=1 width=8) (actual time=1730.407..1730.408 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..21846.00 rows=100 width=0) (actual time=1730.402..1730.402 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.048 ms
+ Execution Time: 1730.447 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.25..21846.26 rows=1 width=8) (actual time=1803.180..1803.183 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..21846.00 rows=100 width=0) (actual time=0.012..1744.312 rows=1000000 loops=1)
+         Filter: (v ~~ '\x25656e647878656e6425'::bytea)
+ Planning Time: 0.046 ms
+ Execution Time: 1803.215 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.25..21846.26 rows=1 width=8) (actual time=1805.746..1805.748 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..21846.00 rows=100 width=0) (actual time=0.017..1746.765 rows=1000000 loops=1)
+         Filter: (v ~~ '\x25656e647878656e6425'::bytea)
+ Planning Time: 0.058 ms
+ Execution Time: 1805.786 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=21846.25..21846.26 rows=1 width=8) (actual time=1805.525..1805.527 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..21846.00 rows=100 width=0) (actual time=0.013..1746.767 rows=1000000 loops=1)
+         Filter: (v ~~ '\x25656e647878656e6425'::bytea)
+ Planning Time: 0.047 ms
+ Execution Time: 1805.559 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=1798.722..1798.723 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=1798.716..1798.717 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 1798.755 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=1802.000..1802.001 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=1801.995..1801.995 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 1802.034 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=1805.136..1805.138 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=1805.131..1805.131 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.043 ms
+ Execution Time: 1805.169 ms
+(6 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=1897.793..1897.794 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=0.013..1839.103 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x656e647878656e64'::bytea) > 0)
+ Planning Time: 0.042 ms
+ Execution Time: 1897.826 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=1884.654..1884.656 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=0.017..1826.596 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x656e647878656e64'::bytea) > 0)
+ Planning Time: 0.043 ms
+ Execution Time: 1884.691 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=25179.33..25179.34 rows=1 width=8) (actual time=1887.982..1887.984 rows=1 loops=1)
+   ->  Seq Scan on bytea_inline_compressed  (cost=0.00..24346.00 rows=333333 width=0) (actual time=0.014..1829.618 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x656e647878656e64'::bytea) > 0)
+ Planning Time: 0.042 ms
+ Execution Time: 1888.018 ms
+(5 rows)
+
+CREATE TABLE
+INSERT 0 1000000
+VACUUM
+                            substr                            | octet_length | pg_column_size | pg_column_size 
+--------------------------------------------------------------+--------------+----------------+----------------
+ \x6f61565a33704a50444c6c724a306f4371454471555579475a6b484532 |         2005 |           2005 |           2033
+(1 row)
+
+         ?column?         
+--------------------------
+ bytea_toast_uncompressed
+(1 row)
+
+                                                             QUERY PLAN                                                             
+------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.036..75.602 rows=1000000 loops=1)
+ Planning Time: 0.032 ms
+ Execution Time: 115.673 ms
+(3 rows)
+
+                                                             QUERY PLAN                                                             
+------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..75.913 rows=1000000 loops=1)
+ Planning Time: 0.032 ms
+ Execution Time: 115.593 ms
+(3 rows)
+
+                                                             QUERY PLAN                                                             
+------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..78.145 rows=1000000 loops=1)
+ Planning Time: 0.033 ms
+ Execution Time: 118.574 ms
+(3 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.00..18870.01 rows=1 width=8) (actual time=179.879..179.880 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=0) (actual time=0.011..120.852 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.043 ms
+ Execution Time: 179.915 ms
+(5 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.00..18870.01 rows=1 width=8) (actual time=177.373..177.374 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=0) (actual time=0.011..118.984 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.042 ms
+ Execution Time: 177.409 ms
+(5 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.00..18870.01 rows=1 width=8) (actual time=176.060..176.062 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..16370.00 rows=1000000 width=0) (actual time=0.012..117.738 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.042 ms
+ Execution Time: 176.094 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=180.957..180.959 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.015..122.304 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.077 ms
+ Execution Time: 180.999 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=180.973..180.975 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.011..122.364 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.052 ms
+ Execution Time: 181.012 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=178.301..178.303 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.011..120.230 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.046 ms
+ Execution Time: 178.338 ms
+(5 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=87.263..87.265 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=87.258..87.259 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.051 ms
+ Execution Time: 87.305 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=85.720..85.722 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=85.715..85.716 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.047 ms
+ Execution Time: 85.756 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=86.766..86.768 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=86.760..86.761 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.066 ms
+ Execution Time: 86.801 ms
+(6 rows)
+
+                                                             QUERY PLAN                                                             
+------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=5117.613..5117.614 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=5117.608..5117.608 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.060 ms
+ Execution Time: 5117.645 ms
+(6 rows)
+
+                                                             QUERY PLAN                                                             
+------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=5212.592..5212.593 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=5212.588..5212.588 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.053 ms
+ Execution Time: 5212.624 ms
+(6 rows)
+
+                                                             QUERY PLAN                                                             
+------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=5077.100..5077.102 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=5077.095..5077.096 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.047 ms
+ Execution Time: 5077.133 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=5114.828..5114.830 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=0.062..5008.347 rows=1000000 loops=1)
+         Filter: (v ~~ '\x255264436a7064313825'::bytea)
+ Planning Time: 0.047 ms
+ Execution Time: 5114.860 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=5095.125..5095.126 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=0.035..4989.227 rows=1000000 loops=1)
+         Filter: (v ~~ '\x255264436a7064313825'::bytea)
+ Planning Time: 0.060 ms
+ Execution Time: 5095.156 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=5147.411..5147.413 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=0.034..5040.002 rows=1000000 loops=1)
+         Filter: (v ~~ '\x255264436a7064313825'::bytea)
+ Planning Time: 0.065 ms
+ Execution Time: 5147.443 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=4956.287..4956.288 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=4956.282..4956.283 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.078 ms
+ Execution Time: 4956.324 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=5036.812..5036.814 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=5036.808..5036.808 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.045 ms
+ Execution Time: 5036.843 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=4933.677..4933.679 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=4933.673..4933.674 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 4933.708 ms
+(6 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=5010.555..5010.557 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.043..4908.312 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x5264436a70643138'::bytea) > 0)
+ Planning Time: 0.043 ms
+ Execution Time: 5010.586 ms
+(5 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=5041.510..5041.512 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.038..4937.321 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x5264436a70643138'::bytea) > 0)
+ Planning Time: 0.058 ms
+ Execution Time: 5041.545 ms
+(5 rows)
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=5014.782..5014.784 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_uncompressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.035..4912.237 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x5264436a70643138'::bytea) > 0)
+ Planning Time: 0.044 ms
+ Execution Time: 5014.817 ms
+(5 rows)
+
+CREATE TABLE
+INSERT 0 1000000
+VACUUM
+                            substr                            | octet_length | pg_column_size | pg_column_size 
+--------------------------------------------------------------+--------------+----------------+----------------
+ \x6161616161616161616161616161616161616161616161616161616161 |         2766 |           2005 |           2033
+(1 row)
+
+        ?column?        
+------------------------
+ bytea_toast_compressed
+(1 row)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.011..75.739 rows=1000000 loops=1)
+ Planning Time: 0.031 ms
+ Execution Time: 115.530 ms
+(3 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.010..75.960 rows=1000000 loops=1)
+ Planning Time: 0.034 ms
+ Execution Time: 115.661 ms
+(3 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on bytea_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=18) (actual time=0.009..75.131 rows=1000000 loops=1)
+ Planning Time: 0.034 ms
+ Execution Time: 114.551 ms
+(3 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.00..18870.01 rows=1 width=8) (actual time=183.424..183.426 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=0) (actual time=0.011..122.357 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.043 ms
+ Execution Time: 183.463 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.00..18870.01 rows=1 width=8) (actual time=270.846..270.848 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=0) (actual time=0.013..182.368 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.072 ms
+ Execution Time: 270.889 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.00..18870.01 rows=1 width=8) (actual time=190.731..190.733 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..16370.00 rows=1000000 width=0) (actual time=0.013..127.774 rows=1000000 loops=1)
+         Filter: (v IS NOT NULL)
+ Planning Time: 0.051 ms
+ Execution Time: 190.769 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=182.324..182.326 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.012..123.345 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.042 ms
+ Execution Time: 182.359 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=178.327..178.329 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.011..120.393 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.048 ms
+ Execution Time: 178.362 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=178.797..178.799 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.012..120.670 rows=1000000 loops=1)
+         Filter: (octet_length(v) > 100)
+ Planning Time: 0.044 ms
+ Execution Time: 178.834 ms
+(5 rows)
+
+                                                           QUERY PLAN                                                            
+---------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=86.552..86.554 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=86.547..86.548 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.048 ms
+ Execution Time: 86.587 ms
+(6 rows)
+
+                                                           QUERY PLAN                                                            
+---------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=86.300..86.301 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=86.294..86.295 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.067 ms
+ Execution Time: 86.334 ms
+(6 rows)
+
+                                                           QUERY PLAN                                                            
+---------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=86.385..86.387 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=86.380..86.380 rows=0 loops=1)
+         Filter: (octet_length(v) > 10000)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 86.420 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=9207.714..9207.716 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=9207.710..9207.710 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.057 ms
+ Execution Time: 9207.751 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=9232.894..9232.896 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=9232.889..9232.890 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.068 ms
+ Execution Time: 9232.942 ms
+(6 rows)
+
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=9298.352..9298.354 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=9298.346..9298.347 rows=0 loops=1)
+         Filter: (v ~~ '\x256e6f746d6174636825'::bytea)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.069 ms
+ Execution Time: 9298.384 ms
+(6 rows)
+
+                                                             QUERY PLAN                                                              
+-------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=9031.203..9031.204 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=0.044..8919.544 rows=1000000 loops=1)
+         Filter: (v ~~ '\x2565316a564f35567225'::bytea)
+ Planning Time: 0.050 ms
+ Execution Time: 9031.236 ms
+(5 rows)
+
+                                                             QUERY PLAN                                                              
+-------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=8959.024..8959.025 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=0.041..8851.330 rows=1000000 loops=1)
+         Filter: (v ~~ '\x2565316a564f35567225'::bytea)
+ Planning Time: 0.048 ms
+ Execution Time: 8959.057 ms
+(5 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=18870.25..18870.26 rows=1 width=8) (actual time=10187.319..10187.320 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..18870.00 rows=100 width=0) (actual time=0.039..10042.429 rows=1000000 loops=1)
+         Filter: (v ~~ '\x2565316a564f35567225'::bytea)
+ Planning Time: 0.047 ms
+ Execution Time: 10187.350 ms
+(5 rows)
+
+                                                             QUERY PLAN                                                              
+-------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=9444.861..9444.863 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=9444.857..9444.858 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.098 ms
+ Execution Time: 9444.907 ms
+(6 rows)
+
+                                                             QUERY PLAN                                                              
+-------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=9102.458..9102.460 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=9102.454..9102.454 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.044 ms
+ Execution Time: 9102.490 ms
+(6 rows)
+
+                                                             QUERY PLAN                                                              
+-------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=9088.528..9088.529 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=9088.524..9088.524 rows=0 loops=1)
+         Filter: ("position"(v, '\x6e6f746d61746368'::bytea) > 0)
+         Rows Removed by Filter: 1000000
+ Planning Time: 0.046 ms
+ Execution Time: 9088.559 ms
+(6 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=9161.524..9161.525 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.038..9050.903 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x65316a564f355672'::bytea) > 0)
+ Planning Time: 0.042 ms
+ Execution Time: 9161.555 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=9084.844..9084.846 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.040..8974.884 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x65316a564f355672'::bytea) > 0)
+ Planning Time: 0.042 ms
+ Execution Time: 9084.877 ms
+(5 rows)
+
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=22203.33..22203.34 rows=1 width=8) (actual time=9038.466..9038.468 rows=1 loops=1)
+   ->  Seq Scan on bytea_toast_compressed  (cost=0.00..21370.00 rows=333333 width=0) (actual time=0.038..8928.654 rows=1000000 loops=1)
+         Filter: ("position"(v, '\x65316a564f355672'::bytea) > 0)
+ Planning Time: 0.063 ms
+ Execution Time: 9038.502 ms
+(5 rows)
+
+   oid    |          relname           | reltoastrelid | relpages | reltuples | toast_pages | toast_tuples | total_relation_size | total_relation_size_pretty 
+----------+----------------------------+---------------+----------+-----------+-------------+--------------+---------------------+----------------------------
+ 22016903 | bytea_inline_compressed    |      22016906 |     9346 |     1e+06 |           0 |            0 |            76619776 | 73 MB
+ 22016897 | bytea_inline_uncompressed  |      22016900 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 23016915 | bytea_toast_compressed     |      23016918 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 22016909 | bytea_toast_uncompressed   |      22016912 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 12016745 | hstore_inline_compressed   |      12016748 |    28572 |     1e+06 |           0 |            0 |           234160128 | 223 MB
+ 12016739 | hstore_inline_uncompressed |      12016742 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 13016757 | hstore_toast_compressed    |      13016760 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 12016751 | hstore_toast_uncompressed  |      12016754 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 17016824 | json_inline_compressed     |      17016827 |    21277 |     1e+06 |           0 |            0 |           174383104 | 166 MB
+ 17016818 | json_inline_uncompressed   |      17016821 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 18016836 | json_toast_compressed      |      18016839 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 17016830 | json_toast_uncompressed    |      17016833 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 19016848 | jsonb_inline_compressed    |      19016851 |    18182 |     1e+06 |           0 |            0 |           149020672 | 142 MB
+ 19016842 | jsonb_inline_uncompressed  |      19016845 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 20016860 | jsonb_toast_compressed     |      20016863 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 19016854 | jsonb_toast_uncompressed   |      19016857 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 20016873 | text_inline_compressed     |      20016876 |     9346 |     1e+06 |           0 |            0 |            76619776 | 73 MB
+ 20016866 | text_inline_uncompressed   |      20016869 |   250000 |     1e+06 |           0 |            0 |          2048598016 | 1954 MB
+ 21016885 | text_toast_compressed      |      21016888 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+ 20016879 | text_toast_uncompressed    |      20016882 |     6370 |     1e+06 |      333334 |        2e+06 |          2828615680 | 2698 MB
+(20 rows)
+
