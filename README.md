@@ -3,7 +3,7 @@
 This is a collection of quick-and-dirty benchmarks of Postgres that I wrote while investigating the performance of "schemaless" types (HSTORE, JSON, JSONB), and variable-length substring matching with BYTEA and TEXT. I wrote two blog posts about them:
 
 * [Postgres large JSON value query performance](https://www.evanjones.ca/postgres-large-json-performance.html)
-* TODO: Write the other blog post
+* [Postgres large sub-string query performance](https://www.evanjones.ca/postgres-large-string-performance.html)
 
 
 ## Running the benchmarks
